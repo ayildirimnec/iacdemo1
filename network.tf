@@ -3,7 +3,7 @@
 #############################################################################
 variable
 "resource_group_name" {
-  type = string
+  default = "DevOpsPOC"
 }
 provider "azurerm" {
   version = "=2.0.0"
