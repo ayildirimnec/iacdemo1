@@ -20,7 +20,7 @@ resource "azurerm_network_ddos_protection_plan" "example" {
 }
 
 resource "azurerm_virtual_network" "example" {
-  name                = "virtualNetwork1"
+  name                = "virtualNetwork2"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   address_space       = ["10.0.0.0/16"]
@@ -45,6 +45,10 @@ resource "azurerm_virtual_network" "example" {
     name           = "subnet3"
     address_prefix = "10.0.3.0/24"
     security_group = azurerm_network_security_group.example.id
+  }
+    subnet {
+    name           = "subnet4"
+    address_prefix = "10.0.4.0/24"
   }
 
   tags = {
